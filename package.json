@@ -1,0 +1,67 @@
+{
+  "name": "angular-2-webpack-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate of angular2 with webpack",
+  "homepage": "",
+  "author": {
+    "name": "Yanni Nightingale",
+    "email": "yanni4night@gmail.com",
+    "url": "http://yanni4night.com"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "angular-2-webpack-boilerplate",
+    "yeoman-generator"
+  ],
+  "scripts": {
+    "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
+    "prod": "NODE_ENV=prod webpack",
+    "prepublish": "npm run prod",
+    "postinstall": "typings install"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^2.1.1",
+    "angular2-template-loader": "^0.5.0",
+    "autoprefixer-loader": "^3.2.0",
+    "awesome-typescript-loader": "^2.2.4",
+    "bell-on-bundler-error-plugin": "^1.0.8",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "eslint-loader": "^1.6.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.0",
+    "img-loader": "^1.3.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "typings": "^1.4.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.15.0",
+    "webpack-shell-plugin": "^0.4.3"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "yanni4night/angular-2-webpack-boilerplate",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "^2.1.1",
+    "@angular/compiler": "^2.1.1",
+    "@angular/core": "^2.1.1",
+    "@angular/platform-browser": "^2.1.1",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.0.0-rc.1",
+    "zone.js": "^0.6.26"
+  }
+}
