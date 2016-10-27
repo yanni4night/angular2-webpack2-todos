@@ -13,14 +13,14 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "angular-2-webpack-boilerplate",
-    "yeoman-generator"
+    "angular-2-webpack-boilerplate"
   ],
   "scripts": {
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
     "prod": "NODE_ENV=prod webpack",
     "prepublish": "npm run prod",
-    "postinstall": "typings install"
+    "postinstall": "./node_modules/.bin/typings install",
+    "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.1.1",

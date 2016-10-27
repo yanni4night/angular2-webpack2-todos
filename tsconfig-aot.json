@@ -13,7 +13,7 @@
   },
 
   "files": [
-    "src/javascripts/main.ts",
+    "src/index/index.module.ts",
     "./typings/index.d.ts"
   ],
 

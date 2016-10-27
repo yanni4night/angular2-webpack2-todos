@@ -19,10 +19,10 @@ const CONFIG = require('./config.js');
 
 module.exports = {
     entry: {
-        main: './src/javascripts/main.ts',
-        about: './src/javascripts/about.ts',
-        polyfill: './src/javascripts/polyfill.ts',
-        vendor: './src/javascripts/vendor.ts'
+        index: './src/index/index.ts',
+        about: './src/about/about.ts',
+        polyfill: './src/polyfill.ts',
+        vendor: './src/vendor.ts'
     },
     output: {
         publicPath: './',
@@ -38,7 +38,7 @@ module.exports = {
         loaders: [{
             test: /\.ts$/,
             loaders: [
-                'awesome-typescript-loader',
+                'awesome-typescript-loader?tsconfig=tsconfig.json',
                 'angular2-template-loader'
             ],
             exclude: [/\.(spec|e2e)\.ts$/]
@@ -64,20 +64,20 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: `[name].[hash].js`,
-            chunks: ['main', 'about', 'polyfill', 'vendor']
+            chunks: ['index', 'about', 'polyfill', 'vendor']
         }),
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'index.html',
-            template: './src/tpls/index.html',
-            chunks: ['vendor', 'common', 'main'],
+            template: './src/index/index.html',
+            chunks: ['polyfill', 'vendor', 'common', 'index'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new HtmlWebpackPlugin({
             title: 'about',
             filename: 'about.html',
-            template: './src/tpls/about.html',
-            chunks: ['vendor', 'common', 'about'],
+            template: './src/about/about.html',
+            chunks: ['polyfill', 'vendor', 'common', 'about'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new webpack.DefinePlugin({
