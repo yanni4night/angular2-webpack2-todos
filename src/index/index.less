@@ -9,12 +9,57 @@
   * @version 0.1.0
   * @since 0.1.0
   */
-center {
-    flex: 1;
-}
-
-.logo {
-    background: url('../assets/logo.png') center center no-repeat;
-    background-size: contain;
-    height: 150px;
+.todo {
+  width: 400px;
+  height: 350px;
+  border: 1px solid #ccc;
+  .todo-title {
+    height: 35px;
+    text-align: center;
+    font: 20px arial,sans-serif;
+    line-height: 35px;
+    color: #231B2B;
+  }
+  ul,li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .todo-list {
+     @item-height: 30px;
+    .todo-item {
+      height: @item-height;
+      font: 16px arial,serif;
+      line-height: @item-height;
+      display: flex;
+      border-bottom: 1px dashed #ccc;
+      &:last-child {
+        border-bottom: none;
+      }
+      .todo-content {
+        &.finished {
+          text-decoration: line-through;
+        }
+        text-indent: .5em;
+        flex: 1;
+        height: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .todo-delete, .todo-finish, .todo-idx {
+        width: 50px;
+        height: 100%;
+        text-align: center;
+        font: bold 12px arial,sans-serif;
+        line-height: inherit;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .todo-idx {
+        width: 30px;
+        text-decoration: none;
+      }
+    }
+  }
 }
