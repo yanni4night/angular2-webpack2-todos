@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Item} from './item';
+import {ItemComponent} from './item.component';
 
 const todos: Array<Item> = [{
   id: '1',
@@ -18,11 +19,8 @@ const todos: Array<Item> = [{
  <div class="todo">
  <div class="todo-title">Angular2 Todos</div>
   <ul class="todo-list">
-    <li *ngFor="let todo of todos;let i = index;" class="todo-item">
-        <div class="todo-idx">{{idxes[i]}}</div>
-        <div class="todo-content" [class.finished]="todo.finished">{{todo.content}}</div>
-        <div class="todo-finish" *ngIf="!todo.finished" (click)="onFinish(todo)">Finish</div>
-        <div class="todo-delete" (click)="onDelete(todo)">Delete</div>
+    <li *ngFor="let todo of todos;let i = index;">
+        <ng-todo-item [todo]="todo" [index]="i" [onDelete]="onDelete.bind(this)" class="todo-item"></ng-todo-item>
     </li>
   </ul>
  </div>
@@ -30,11 +28,9 @@ const todos: Array<Item> = [{
 })
 export class TodoComponent {
   todos: Array<Item> = todos
-  idxes = '①,②,③,④,⑤,⑥,⑦,⑧,⑨,⑩'.split(',')
 
-  onDelete(item: Item) {
-    const idx = this.todos.indexOf(item);
-    this.todos.splice(idx);
+  onDelete(idx: number) {
+    this.todos.splice(idx, 1);
   }
   onFinish(item: Item) {
     item.finished = true;
