@@ -15,6 +15,12 @@ const commonConfig = require('./webpack.common');
 const BellOnBundlerErrorPlugin = require('bell-on-bundler-error-plugin');
 
 module.exports = webpackMerge(commonConfig, {
+    entry: {
+        index: './src/index/index.ts',
+        about: './src/about/about.ts',
+        polyfill: './src/polyfill.ts',
+        vendor: './src/vendor.ts'
+    },
     output: {
         filename: '[name].[hash].js',
         publicPath: 'http://localhost:8080/'

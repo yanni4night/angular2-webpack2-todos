@@ -15,12 +15,17 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 
 module.exports = webpackMerge(commonConfig, {
+    entry: {
+        index: './src/index/index.aot.ts',
+        about: './src/about/about.aot.ts',
+        polyfill: './src/polyfill.ts',
+        vendor: './src/vendor.ts'
+    },
     output: {
         filename: '[name].[chunkhash].js'
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
-        //new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false

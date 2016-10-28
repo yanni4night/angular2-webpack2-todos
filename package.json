@@ -1,5 +1,5 @@
 {
-  "name": "angular-2-webpack-boilerplate",
+  "name": "angular2-webpack2-boilerplate",
   "version": "0.1.0",
   "description": "Boilerplate of angular2 with webpack2",
   "homepage": "",
@@ -9,13 +9,13 @@
     "url": "http://yanni4night.com"
   },
   "keywords": [
-    "angular-2-webpack-boilerplate"
+    "angular2-webpack2-boilerplate"
   ],
   "scripts": {
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
-    "prod": "NODE_ENV=prod ./node_modules/.bin/webpack",
+    "prod": "npm run ngc && NODE_ENV=prod ./node_modules/.bin/webpack",
     "prepublish": "npm run prod",
-    "postinstall": "npm run typings && npm run ngc",
+    "postinstall": "npm run typings",
     "typings": "./node_modules/.bin/typings install",
     "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json"
   },
@@ -42,18 +42,13 @@
     "webpack-merge": "^0.15.0",
     "webpack-shell-plugin": "^0.4.3"
   },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
   "repository": "yanni4night/angular-2-webpack-boilerplate",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "^2.1.1",
     "@angular/core": "^2.1.1",
     "@angular/platform-browser": "^2.1.1",
+    "@angular/platform-browser-dynamic": "^2.1.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.0-rc.1",
     "zone.js": "^0.6.26"

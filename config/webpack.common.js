@@ -11,19 +11,13 @@
  */
 'use strict';
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const CONFIG = require('./config.js');
 
 module.exports = {
-    entry: {
-        index: './src/index/index.ts',
-        about: './src/about/about.ts',
-        polyfill: './src/polyfill.ts',
-        vendor: './src/vendor.ts'
-    },
     output: {
         publicPath: './',
         path: path.join(__dirname, '..', CONFIG.OUTPUT)
@@ -72,14 +66,14 @@ module.exports = {
             title: 'index',
             filename: 'index.html',
             template: './src/index/index.html',
-            chunks: ['polyfill', 'vendor', 'common', 'index'],
+            chunks: ['index', 'polyfill', 'vendor', 'common'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new HtmlWebpackPlugin({
             title: 'about',
             filename: 'about.html',
             template: './src/about/about.html',
-            chunks: ['polyfill', 'vendor', 'common', 'about'],
+            chunks: ['about', 'polyfill', 'vendor', 'common'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new webpack.DefinePlugin({

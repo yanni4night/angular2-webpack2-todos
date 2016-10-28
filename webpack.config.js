@@ -19,8 +19,6 @@ case 'production':
     break;
 case 'dev':
 case 'development':
-    module.exports = require('./config/webpack.dev.js');
-    break;
 default:
-    module.exports = require('./config/webpack.build.js');
+    module.exports = require('./config/webpack.dev.js');
 }

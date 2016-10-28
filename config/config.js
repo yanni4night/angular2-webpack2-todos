@@ -11,7 +11,7 @@
  */
 'use strict';
 
-const highPriorityChunks = ['polyfill', 'vendor' ,'common'];
+const highPriorityChunks = ['vendor', 'polyfill', 'common'];// later, higher
 
 module.exports = {
     OUTPUT: 'dist',

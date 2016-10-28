@@ -1,7 +1,4 @@
-import {platformBrowser} from '@angular/platform-browser';
-import {enableProdMode} from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { IndexModule } from './index.module';
 
-import {IndexModuleNgFactory} from '../../aot/src/index/index.module.ngfactory';
-
-enableProdMode();
-platformBrowser().bootstrapModuleFactory(IndexModuleNgFactory);
+platformBrowserDynamic().bootstrapModule(IndexModule);
