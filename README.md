@@ -1,11 +1,25 @@
 # angular-2-webpack2-boilerplate [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> Boilerplate of angular2 with webpack2
+Boilerplate of angular2 with webpack2, support JIT and AOT modes.
+
+>It's a simple todo list app
+
+
+Development:
+
+```sh
+npm run dev
+```
+
+Production:
+
+```sh
+npm run prod
+```
 
 ## License
 
 MIT © [Yanni Nightingale](http://yanni4night.com)
-
 
 [npm-image]: https://badge.fury.io/js/angular2-webpack2-boilerplate.svg
 [npm-url]: https://npmjs.org/package/angular2-webpack2-boilerplate
