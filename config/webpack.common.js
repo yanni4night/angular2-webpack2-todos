@@ -43,18 +43,17 @@ module.exports = {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract({
                 fallbackLoader: "style-loader",
-                loader: "css-loader?minimize!autoprefixer-loader"
+                loader: "css?minimize!postcss"
             })
-
         }, {
             test: /\.less$/,
             loader: ExtractTextPlugin.extract({
                 fallbackLoader: "style-loader",
-                loader: "css-loader?minimize!autoprefixer-loader!less-loader"
+                loader: "css?minimize!postcss!less"
             })
         }, {
             test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-            loader: `url-loader?limit=1024&name=[name].[hash].[ext]`
+            loader: `url?limit=1024&name=[name].[hash].[ext]`
         }]
     },
     bail: true,

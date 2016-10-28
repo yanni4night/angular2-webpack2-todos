@@ -1,23 +1,19 @@
 {
   "name": "angular-2-webpack-boilerplate",
   "version": "0.1.0",
-  "description": "Boilerplate of angular2 with webpack",
+  "description": "Boilerplate of angular2 with webpack2",
   "homepage": "",
   "author": {
     "name": "Yanni Nightingale",
     "email": "yanni4night@gmail.com",
     "url": "http://yanni4night.com"
   },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/index.js",
   "keywords": [
     "angular-2-webpack-boilerplate"
   ],
   "scripts": {
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
-    "prod": "NODE_ENV=prod webpack",
+    "prod": "NODE_ENV=prod ./node_modules/.bin/webpack",
     "prepublish": "npm run prod",
     "postinstall": "npm run typings && npm run ngc",
     "typings": "./node_modules/.bin/typings install",
@@ -25,14 +21,12 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.1.1",
+    "@angular/compiler": "^2.1.1",
     "angular2-template-loader": "^0.5.0",
-    "autoprefixer-loader": "^3.2.0",
+    "postcss-loader": "^1.0.0",
     "awesome-typescript-loader": "^2.2.4",
     "bell-on-bundler-error-plugin": "^1.0.8",
     "css-loader": "^0.25.0",
-    "eslint": "^3.1.1",
-    "eslint-config-xo-space": "^0.15.0",
-    "eslint-loader": "^1.6.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.0",
@@ -58,7 +52,6 @@
   "license": "MIT",
   "dependencies": {
     "@angular/common": "^2.1.1",
-    "@angular/compiler": "^2.1.1",
     "@angular/core": "^2.1.1",
     "@angular/platform-browser": "^2.1.1",
     "core-js": "^2.4.1",
