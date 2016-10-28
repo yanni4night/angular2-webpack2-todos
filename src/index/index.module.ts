@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {IndexComponent} from './index.component';
+import {TodoComponent} from './todo.component';
 
 @NgModule({
   imports: [BrowserModule],
-  declarations: [IndexComponent],
-  bootstrap: [IndexComponent]
+  declarations: [TodoComponent],
+  bootstrap: [TodoComponent]
 })
 export class IndexModule { }
