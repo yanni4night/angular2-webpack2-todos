@@ -29,7 +29,7 @@ module.exports = {
         path: path.join(__dirname, '..', CONFIG.OUTPUT)
     },
     resolve: {
-        extensions: ['', '.ts', '.js', '.json']
+        extensions: ['.ts', '.js', '.json']
     },
     module: {
         loaders: [{
@@ -41,11 +41,17 @@ module.exports = {
             exclude: [/\.(spec|e2e)\.ts$/]
         }, {
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize!autoprefixer-loader")
+            loader: ExtractTextPlugin.extract({
+                fallbackLoader: "style-loader",
+                loader: "css-loader?minimize!autoprefixer-loader"
+            })
+
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract("style-loader",
-                "css-loader?minimize!autoprefixer-loader!less-loader")
+            loader: ExtractTextPlugin.extract({
+                fallbackLoader: "style-loader",
+                loader: "css-loader?minimize!autoprefixer-loader!less-loader"
+            })
         }, {
             test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
             loader: `url-loader?limit=1024&name=[name].[hash].[ext]`
