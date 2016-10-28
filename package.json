@@ -14,10 +14,11 @@
   "scripts": {
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
     "prod": "npm run ngc && NODE_ENV=prod ./node_modules/.bin/webpack",
-    "prepublish": "npm run prod",
+    "prepublish": "npm run clean",
     "postinstall": "npm run typings",
     "typings": "./node_modules/.bin/typings install",
-    "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json"
+    "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json",
+    "clean": "rm -rf aot dist ts"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.1.1",
