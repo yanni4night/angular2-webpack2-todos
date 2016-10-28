@@ -17,7 +17,7 @@ const BellOnBundlerErrorPlugin = require('bell-on-bundler-error-plugin');
 module.exports = webpackMerge(commonConfig, {
     output: {
         filename: '[name].[hash].js',
-        publicPath: 'http://localhost:8080/'
+        //publicPath: 'http://localhost:8080/'
     },
     plugins: [
         new BellOnBundlerErrorPlugin()

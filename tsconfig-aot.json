@@ -14,6 +14,8 @@
 
   "files": [
     "src/index/index.module.ts",
+    "src/polyfill.ts",
+    "src/vendor.ts",
     "./typings/index.d.ts"
   ],
 

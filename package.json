@@ -1,6 +1,6 @@
 {
   "name": "angular-2-webpack-boilerplate",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Boilerplate of angular2 with webpack",
   "homepage": "",
   "author": {
@@ -19,7 +19,8 @@
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
     "prod": "NODE_ENV=prod webpack",
     "prepublish": "npm run prod",
-    "postinstall": "./node_modules/.bin/typings install",
+    "postinstall": "npm run typings && npm run ngc",
+    "typings": "./node_modules/.bin/typings install",
     "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json"
   },
   "devDependencies": {
@@ -41,7 +42,6 @@
     "style-loader": "^0.13.1",
     "typings": "^1.4.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^0.15.0",

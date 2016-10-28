@@ -10,3 +10,4 @@ bower_components
 src/**/*.js
 src/**/*.js.map
 aot
+dist

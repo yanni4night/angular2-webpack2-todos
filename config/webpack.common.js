@@ -31,15 +31,12 @@ module.exports = {
     resolve: {
         extensions: ['', '.ts', '.js', '.json']
     },
-    eslint: {
-        configFile: `${__dirname}/.eslintrc`
-    },
     module: {
         loaders: [{
             test: /\.ts$/,
             loaders: [
-                'awesome-typescript-loader?tsconfig=tsconfig.json',
-                'angular2-template-loader'
+                'awesome-typescript?tsconfig=tsconfig.json',
+                'angular2-template'
             ],
             exclude: [/\.(spec|e2e)\.ts$/]
         }, {
