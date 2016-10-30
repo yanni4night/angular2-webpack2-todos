@@ -5,14 +5,16 @@ import {Item} from './item';
   selector: 'ng-todo-item',
   template:
   `
-  <div class="todo-item" *ngIf="todo.isEditing">
-    <input type="text" class="todo-input" [(ngModel)]="todo.content" (blur)="onEditFinish(todo)"/>
-  </div>
-  <div class="todo-item" *ngIf="!todo.isEditing">
-    <div class="todo-idx">{{idxes[index]}}</div>
-    <div class="todo-content" [class.finished]="todo.finished" (click)="onEdit(todo)" title={{todo.content}}>{{todo.content}}</div>
-    <div class="todo-finish" *ngIf="!todo.finished" (click)="onFinish(todo)">Finish</div>
-    <div class="todo-delete" (click)="onDelete(index)">Delete</div>
+  <div class="todo-item" [ngSwitch]="todo.isEditing">
+    <template [ngSwitchCase]="true">
+      <input type="text" class="todo-input" [(ngModel)]="todo.content" (blur)="onEditFinish(todo)"/>
+    </template>
+    <template ngSwitchDefault>
+      <div class="todo-idx">{{idxes[index]}}</div>
+      <div class="todo-content" [class.finished]="todo.finished" (click)="onEdit(todo)" title={{todo.content}}>{{todo.content}}</div>
+      <div class="todo-finish" *ngIf="!todo.finished" (click)="onFinish(todo)">Finish</div>
+      <div class="todo-delete" (click)="onDelete(index)">Delete</div>
+    </template>
   </div>
   `,
 })
