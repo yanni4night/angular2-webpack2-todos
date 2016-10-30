@@ -1,7 +1,7 @@
 {
-  "name": "angular2-webpack2-boilerplate",
+  "name": "angular2-webpack2-todos",
   "version": "0.1.0",
-  "description": "Boilerplate of angular2 with webpack2",
+  "description": "Todo APP built by Angular2 & Webpack2",
   "homepage": "",
   "author": {
     "name": "Yanni Nightingale",
@@ -9,7 +9,7 @@
     "url": "http://yanni4night.com"
   },
   "keywords": [
-    "angular2-webpack2-boilerplate"
+    "angular2-webpack2-todos"
   ],
   "scripts": {
     "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
@@ -44,7 +44,10 @@
     "webpack-merge": "^0.15.0",
     "webpack-shell-plugin": "^0.4.3"
   },
-  "repository": "yanni4night/angular-2-webpack-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanni4night/angular2-webpack2-todos.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@angular/common": "^2.1.1",
