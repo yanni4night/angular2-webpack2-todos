@@ -10,7 +10,7 @@ import {Item} from './item';
   </div>
   <div class="todo-item" *ngIf="!todo.isEditing">
     <div class="todo-idx">{{idxes[index]}}</div>
-    <div class="todo-content" [class.finished]="todo.finished" (click)="onEdit(todo)">{{todo.content}}</div>
+    <div class="todo-content" [class.finished]="todo.finished" (click)="onEdit(todo)" title={{todo.content}}>{{todo.content}}</div>
     <div class="todo-finish" *ngIf="!todo.finished" (click)="onFinish(todo)">Finish</div>
     <div class="todo-delete" (click)="onDelete(index)">Delete</div>
   </div>
