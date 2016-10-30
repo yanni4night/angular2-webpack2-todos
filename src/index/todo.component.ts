@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
 import {Item} from './item';
 import {ItemComponent} from './item.component';
 import {TodoService} from './todo.service';
+
 
 @Component({
   selector: 'ng-todo',
@@ -9,7 +11,10 @@ import {TodoService} from './todo.service';
   template:
   `
  <div class="todo">
- <div class="todo-title">Angular2 Todos</div>
+ <div class="todo-title">Angular2 Todos
+  <a [href]="githubUrl" class="link">github</a>
+  <a href="#" class="link" (click)="_onNew($event)">new</a>
+ </div>
   <ul class="todo-list">
     <li *ngFor="let todo of todos;let i = index;">
         <ng-todo-item [todo]="todo" [index]="i" [onDelete]="onDelete.bind(this)" [onChange]="onChange.bind(this)"></ng-todo-item>
@@ -20,7 +25,10 @@ import {TodoService} from './todo.service';
 })
 export class TodoComponent implements OnInit{
   todos: Array<Item> = []
-  constructor(private todoService: TodoService) { }
+  githubUrl: any = ''
+  constructor(private todoService: TodoService, private sanitizer: DomSanitizer) {
+    this.githubUrl = sanitizer.bypassSecurityTrustUrl('https://github.com/yanni4night/angular2-webpack2-todos');
+  }
   ngOnInit(): void {
     this.todoService.getTodoList().then(todos => {
       this.todos = todos;
@@ -38,5 +46,14 @@ export class TodoComponent implements OnInit{
   }
   onChange(item: Item) {
     this.todoService.saveTodoList(this.todos);
+  }
+  _onNew(evt: any) {
+    evt.preventDefault();
+    this.todos.push({
+      id: Date.now(),
+      content: 'Click to edit',
+      finished: false,
+      isEditing: false
+    });
   }
 }
