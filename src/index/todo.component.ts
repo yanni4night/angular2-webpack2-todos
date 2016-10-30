@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Item} from './item';
 import {ItemComponent} from './item.component';
+import {TodoService} from './todo.service';
 
 const todos: Array<Item> = [{
   id: '1',
@@ -16,6 +17,7 @@ const todos: Array<Item> = [{
 
 @Component({
   selector: 'ng-todo',
+  providers: [TodoService],
   template:
   `
  <div class="todo">
@@ -29,8 +31,15 @@ const todos: Array<Item> = [{
   `,
 })
 export class TodoComponent {
-  todos: Array<Item> = todos
-
+  todos: Array<Item> = []
+  constructor(private todoService: TodoService) { }
+  ngOnInit(): void {
+    this.todoService.getTodoList().then(todos=>{
+      this.todos = todos;
+    }).catch(e => {
+      console.error(e);
+    });
+  }
   onDelete(idx: number) {
     this.todos.splice(idx, 1);
   }
