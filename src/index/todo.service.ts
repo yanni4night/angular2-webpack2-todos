@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Item} from './item'; 
 
-const todos: Array<Item> = [{
+let gTodos: Array<Item> = [{
   id: '1',
   content: 'Use webpack2 and angular2 to build a todo app',
   finished: false,
@@ -16,6 +16,9 @@ const todos: Array<Item> = [{
 @Injectable()
 export class TodoService {
     getTodoList() : Promise<Array<Item>>{
-        return Promise.resolve(todos);
+        return Promise.resolve(gTodos);
+    }
+    saveTodoList(todos: Array<Item>) {
+        gTodos = todos;
     }
 }
