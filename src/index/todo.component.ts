@@ -12,7 +12,7 @@ import {TodoService} from './todo.service';
  <div class="todo-title">Angular2 Todos</div>
   <ul class="todo-list">
     <li *ngFor="let todo of todos;let i = index;">
-        <ng-todo-item [todo]="todo" [index]="i" [onDelete]="onDelete.bind(this)"></ng-todo-item>
+        <ng-todo-item [todo]="todo" [index]="i" [onDelete]="onDelete.bind(this)" [onChange]="onChange.bind(this)"></ng-todo-item>
     </li>
   </ul>
  </div>
@@ -34,6 +34,9 @@ export class TodoComponent implements OnInit{
   }
   onFinish(item: Item) {
     item.finished = true;
+    this.todoService.saveTodoList(this.todos);
+  }
+  onChange(item: Item) {
     this.todoService.saveTodoList(this.todos);
   }
 }

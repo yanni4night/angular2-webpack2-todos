@@ -18,7 +18,8 @@ export class TodoService {
     getTodoList() : Promise<Array<Item>>{
         return Promise.resolve(gTodos);
     }
-    saveTodoList(todos: Array<Item>) {
+    saveTodoList(todos: Array<Item>) : void {
         gTodos = todos;
+        console.log('saved');
     }
 }
