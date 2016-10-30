@@ -1,9 +1,7 @@
 # angular-2-webpack2-todos 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
 Todo App built by Angular2 & Webpack2, supports JIT and AOT.
-
->It's a simple todo list app
 
 ***Features***:
 
@@ -33,9 +31,11 @@ npm run prod
 
 MIT © [Yanni Nightingale](http://yanni4night.com)
 
-[npm-image]: https://badge.fury.io/js/angular2-webpack2-todos.svg
 [npm-url]: https://npmjs.org/package/angular2-webpack2-todos
-[travis-image]: https://travis-ci.org/yanni4night/angular2-webpack2-todos.svg?branch=master
+[npm-image]: http://img.shields.io/npm/v/angular2-webpack2-todos.svg
 [travis-url]: https://travis-ci.org/yanni4night/angular2-webpack2-todos
-[daviddm-image]: https://david-dm.org/yanni4night/angular-2-webpack2-todos.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/yanni4night/angular2-webpack2-todos
+[travis-image]: http://img.shields.io/travis/yanni4night/angular2-webpack2-todos.svg
+[david-dm-url]:https://david-dm.org/yanni4night/angular2-webpack2-todos
+[david-dm-image]:https://david-dm.org/yanni4night/angular2-webpack2-todos.svg
+[david-dm-dev-url]:https://david-dm.org/yanni4night/angular2-webpack2-todos#type=dev
+[david-dm-dev-image]:https://david-dm.org/yanni4night/angular2-webpack2-todos/dev-status.svg

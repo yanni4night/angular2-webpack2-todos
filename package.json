@@ -18,7 +18,8 @@
     "postinstall": "npm run typings",
     "typings": "./node_modules/.bin/typings install",
     "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json",
-    "clean": "rm -rf aot dist ts"
+    "clean": "rm -rf aot dist ts",
+    "test": "npm run prod"
   },
   "devDependencies": {
     "@angular/compiler": "^2.1.1",
