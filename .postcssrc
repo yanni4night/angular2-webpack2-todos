@@ -1,0 +1,7 @@
+{
+    plugins: {
+        "autoprefixer": {
+            "browsers": ["last 2 Chrome versions", "iOS > 8", "Android > 4.0"]
+        }
+    }
+}
