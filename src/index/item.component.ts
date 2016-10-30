@@ -5,13 +5,13 @@ import {Item} from './item';
   selector: 'ng-todo-item',
   template:
   `
-  <div class="todo-item" [ngSwitch]="todo.isEditing">
+  <div class="todo-item" [ngSwitch]="todo.isEditing" todo-item-highlight>
     <template [ngSwitchCase]="true">
       <input type="text" class="todo-input" [(ngModel)]="todo.content" (blur)="_onEditDone(todo)"/>
     </template>
     <template ngSwitchDefault>
       <div class="todo-idx">{{idxes[index]}}</div>
-      <div class="todo-content" [class.finished]="todo.finished" (click)="onEdit(todo)" title={{todo.content}}>{{todo.content}}</div>
+      <div class="todo-content" [class.finished]="todo.finished" (click)="_onEdit(todo)" title={{todo.content}}>{{todo.content}}</div>
       <div class="todo-finish" *ngIf="!todo.finished" (click)="_onFinish(todo)">Finish</div>
       <div class="todo-delete" (click)="onDelete(index)">Delete</div>
     </template>
@@ -30,7 +30,7 @@ export class ItemComponent {
 
   idxes = '①,②,③,④,⑤,⑥,⑦,⑧,⑨,⑩'.split(',')
 
-  onEdit(item: Item) {
+  _onEdit(item: Item) {
     item.isEditing = true;
   }
   _onEditDone(item: Item) {
