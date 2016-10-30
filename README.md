@@ -4,6 +4,16 @@ Boilerplate of angular2 with webpack2, support JIT and AOT modes.
 
 >It's a simple todo list app
 
+***Features***:
+ - [x] AOT/JIT
+ - [x] Component
+ - [x] DI
+ - [x] Service
+ - [x] Directive
+ - [] Test
+ - [] Animation
+ - [] Router
+ - [] DomSanitizer
 
 Development:
 
