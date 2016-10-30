@@ -1,4 +1,5 @@
-# angular-2-webpack2-todos [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# angular-2-webpack2-todos 
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 Todo App built by Angular2 & Webpack2, supports JIT and AOT.
 
@@ -11,9 +12,9 @@ Todo App built by Angular2 & Webpack2, supports JIT and AOT.
  - [x] DI
  - [x] Service
  - [x] Directive
- - [] Test
- - [] Animation
- - [] Router
+ - [ ] Test
+ - [ ] Animation
+ - [ ] Router
  - [x] DomSanitizer
 
 Development:
