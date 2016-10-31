@@ -10,7 +10,7 @@ const CONFIG = require('./config.js');
 
 module.exports = {
     entry: {
-        index: './src/index/index.ts',
+        index: ['./src/index/index.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8080'],
         about: './src/about/about.ts',
         polyfill: './src/polyfill.ts',
         vendor: './src/vendor.ts'
@@ -83,6 +83,7 @@ module.exports = {
     ],
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'
+        stats: 'minimal',
+        contentBase: `./${CONFIG.OUTPUT}`
     }
 };

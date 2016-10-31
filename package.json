@@ -12,7 +12,7 @@
     "angular2-webpack2-todos"
   ],
   "scripts": {
-    "dev": "npm run dll && webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
+    "dev": "npm run dll && webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --inline --hot",
     "prod": "npm run ngc && NODE_ENV=prod ./node_modules/.bin/webpack",
     "prepublish": "npm run clean",
     "postinstall": "npm run typings",
