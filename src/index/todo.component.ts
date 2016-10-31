@@ -12,8 +12,8 @@ import {TodoService} from './todo.service';
   `
  <div class="todo">
  <div class="todo-title">Angular2 Todos
-  <a [href]="githubUrl" class="link">github</a>
-  <a href="#" class="link" (click)="_onNew($event)">new</a>
+  <a [href]="githubUrl" class="link">G</a>
+  <a href="#" class="link" (click)="_onNew($event)">N</a>
  </div>
   <ul class="todo-list">
     <li *ngFor="let todo of todos;let i = index;">

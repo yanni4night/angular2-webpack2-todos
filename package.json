@@ -12,18 +12,20 @@
     "angular2-webpack2-todos"
   ],
   "scripts": {
-    "dev": "webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
+    "dev": "npm run dll && webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --content-base dist/",
     "prod": "npm run ngc && NODE_ENV=prod ./node_modules/.bin/webpack",
     "prepublish": "npm run clean",
     "postinstall": "npm run typings",
     "typings": "./node_modules/.bin/typings install",
     "ngc": "./node_modules/.bin/ngc -p tsconfig-aot.json",
     "clean": "rm -rf aot dist ts",
-    "test": "npm run prod"
+    "test": "npm run prod",
+    "dll": "./node_modules/.bin/webpack --config config/webpack.dll.js"
   },
   "devDependencies": {
     "@angular/compiler": "^2.1.1",
     "@angular/compiler-cli": "^2.1.1",
+    "add-asset-html-webpack-plugin": "^1.0.2",
     "angular2-template-loader": "^0.6.0",
     "autoprefixer": "^6.5.1",
     "awesome-typescript-loader": "^2.2.4",
@@ -42,7 +44,6 @@
     "webpack": "^2.1.0-beta.25",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^0.15.0",
     "webpack-shell-plugin": "^0.4.3"
   },
   "repository": {

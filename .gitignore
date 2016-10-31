@@ -12,3 +12,5 @@ src/**/*.js.map
 aot
 dist
 ts
+dll.js
+manifest.json

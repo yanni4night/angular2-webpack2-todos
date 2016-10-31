@@ -3,7 +3,7 @@
 
 Todo App built by Angular2 & Webpack2, supports JIT and AOT.
 
-***Features***:
+***Angular Features***:
 
  - [x] AOT/JIT
  - [x] Component
@@ -14,6 +14,15 @@ Todo App built by Angular2 & Webpack2, supports JIT and AOT.
  - [ ] Animation
  - [ ] Router
  - [x] DomSanitizer
+
+***Webpack Features***:
+
+ - [x] Commons Chunk
+ - [x] Dll
+ - [x] Dev Server
+ - [x] Dashboard
+ - [x] CSS Extract
+ - [ ] Hot Replace
 
 Development:
 
