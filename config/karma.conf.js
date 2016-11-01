@@ -83,13 +83,6 @@ module.exports = function (config) {
             'Chrome'
         ],
 
-        customLaunchers: {
-            ChromeTravisCi: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            }
-        },
-
         /*
          * Continuous Integration mode
          * if true, Karma captures browsers, runs the tests and exits
@@ -99,7 +92,7 @@ module.exports = function (config) {
 
     if (process.env.TRAVIS) {
         configuration.browsers = [
-            'ChromeTravisCi'
+            'PhantomJS'
         ];
     }
 
