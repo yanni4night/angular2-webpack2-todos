@@ -9,7 +9,10 @@
     "url": "http://yanni4night.com"
   },
   "keywords": [
-    "angular2-webpack2-todos"
+    "angular2-webpack2-todos",
+    "angular2",
+    "webpack2",
+    "todos"
   ],
   "scripts": {
     "dev": "npm run dll && NODE_ENV=development webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js",
