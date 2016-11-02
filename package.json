@@ -12,8 +12,8 @@
     "angular2-webpack2-todos"
   ],
   "scripts": {
-    "dev": "npm run dll && webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js --inline --hot",
-    "prod": "npm run ngc && NODE_ENV=prod ./node_modules/.bin/webpack && karma start",
+    "dev": "npm run dll && NODE_ENV=development webpack-dashboard -c cyan -- webpack-dev-server --config ./config/webpack.dev.js",
+    "prod": "npm run ngc && NODE_ENV=production ./node_modules/.bin/webpack --progress && karma start",
     "prepublish": "npm run clean",
     "postinstall": "npm run typings",
     "typings": "./node_modules/.bin/typings install",

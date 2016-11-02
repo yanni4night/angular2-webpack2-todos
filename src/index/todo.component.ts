@@ -23,7 +23,7 @@ import {TodoService} from './todo.service';
  </div>
   `,
 })
-export class TodoComponent implements OnInit{
+export class TodoComponent implements OnInit {
   todos: Array<Item> = []
   githubUrl: any = ''
   constructor(private todoService: TodoService, private sanitizer: DomSanitizer) {

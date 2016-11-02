@@ -10,7 +10,7 @@ const CONFIG = require('./config.js');
 
 module.exports = {
     entry: {
-        index: ['./src/index/index.ts', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8080'],
+        index: './src/index/index.ts',
         about: './src/about/about.ts',
         polyfill: './src/polyfill.ts',
         vendor: './src/vendor.ts'
@@ -42,7 +42,6 @@ module.exports = {
             loader: `url?limit=1024&name=[name].[ext]`
         }]
     },
-    bail: true,
     profile: true,
     plugins: [
         new WebpackShellPlugin({
