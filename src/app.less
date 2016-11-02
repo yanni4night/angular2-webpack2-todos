@@ -9,11 +9,13 @@
   * @version 0.1.0
   * @since 0.1.0
   */
+
 .highlight {
   &:hover {
     background-color: #B5B2A9;
   }
 }
+
 .todo {
   width: 400px;
   height: 350px;
@@ -27,20 +29,22 @@
     }
     height: 35px;
     text-align: center;
-    font: 20px arial,sans-serif;
+    font: 20px arial,
+    sans-serif;
     line-height: 35px;
     color: #231B2B;
   }
-  ul,li{
+  ul,
+  li {
     padding: 0;
     margin: 0;
     list-style: none;
   }
   .todo-list {
-     @item-height: 30px;
+    @item-height: 30px;
     .todo-item {
       height: @item-height;
-      font: 16px arial,serif;
+      font: 16px arial, serif;
       line-height: @item-height;
       display: flex;
       border-bottom: 1px dashed #ccc;
@@ -62,11 +66,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      .todo-delete, .todo-finish, .todo-idx {
+      .todo-delete,
+      .todo-finish,
+      .todo-idx {
         width: 50px;
         height: 100%;
         text-align: center;
-        font: bold 12px arial,sans-serif;
+        font: bold 12px arial, sans-serif;
         line-height: inherit;
         cursor: pointer;
         text-decoration: underline;

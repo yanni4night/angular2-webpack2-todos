@@ -8,8 +8,7 @@ const CONFIG = require('./config.js');
 
 module.exports = {
     entry: {
-        index: './src/index/index.aot.ts',
-        about: './src/about/about.aot.ts',
+        index: './src/browser.main.aot.ts',
         polyfill: './src/polyfill.ts',
         vendor: './src/vendor.ts'
     },
@@ -56,20 +55,13 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
             filename: `[name].[hash].js`,
-            chunks: ['index', 'about', 'polyfill', 'vendor']
+            chunks: ['app', 'polyfill', 'vendor']
         }),
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'index.html',
-            template: './src/index/index.html',
-            chunks: ['index', 'polyfill', 'vendor', 'common'],
-            chunksSortMode: CONFIG.sortChunks
-        }),
-        new HtmlWebpackPlugin({
-            title: 'about',
-            filename: 'about.html',
-            template: './src/about/about.html',
-            chunks: ['about', 'polyfill', 'vendor', 'common'],
+            template: './src/app.html',
+            chunks: ['app', 'polyfill', 'vendor', 'common'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new webpack.optimize.UglifyJsPlugin({

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {Item} from './item';
-import {ItemComponent} from './item.component';
-import {TodoService} from './todo.service';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Item } from './item';
+import { ItemComponent } from './item.component';
+import { TodoService } from './todo.service';
 
 
 @Component({

@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Item} from './item';
+import { Component, Input } from '@angular/core';
+import { Item } from './item';
 
 @Component({
   selector: 'ng-todo-item',

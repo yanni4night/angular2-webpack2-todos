@@ -14,7 +14,7 @@
   },
 
   "files": [
-    "src/index/index.module.ts",
+    "src/app.module.ts",
     "./typings/index.d.ts"
   ],
 

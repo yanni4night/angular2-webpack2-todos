@@ -10,8 +10,7 @@ const CONFIG = require('./config.js');
 
 module.exports = {
     entry: {
-        index: './src/index/index.ts',
-        about: './src/about/about.ts',
+        app: './src/browser.main.ts',
         polyfill: './src/polyfill.ts',
         vendor: './src/vendor.ts'
     },
@@ -62,15 +61,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'index.html',
-            template: './src/index/index.html',
-            chunks: ['index', 'polyfill', 'vendor'],
-            chunksSortMode: CONFIG.sortChunks
-        }),
-        new HtmlWebpackPlugin({
-            title: 'about',
-            filename: 'about.html',
-            template: './src/about/about.html',
-            chunks: ['about', 'polyfill', 'vendor'],
+            template: './src/app.html',
+            chunks: ['app', 'polyfill', 'vendor'],
             chunksSortMode: CONFIG.sortChunks
         }),
         new AddAssetHtmlPlugin({
